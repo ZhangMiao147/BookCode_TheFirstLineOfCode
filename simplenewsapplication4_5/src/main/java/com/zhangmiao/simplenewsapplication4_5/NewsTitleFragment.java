@@ -32,7 +32,7 @@ public class NewsTitleFragment extends Fragment implements AdapterView.OnItemCli
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         newsList = getNews();
-        adapter = new NewsAdapter(activity, R.layout.news_item,newsList);
+        adapter = new NewsAdapter(activity, R.layout.news_item, newsList);
     }
 
     @Nullable
@@ -51,7 +51,7 @@ public class NewsTitleFragment extends Fragment implements AdapterView.OnItemCli
         if (getActivity().findViewById(R.id.news_content_layout) != null) {
             isTwoPane = true; // 可以找到news_content_layout布局时，为双页模式
         } else {
-            isTwoPane =  false; //找不到news_content_layout布局时，为单页模式
+            isTwoPane = false; //找不到news_content_layout布局时，为单页模式
         }
     }
 
@@ -60,7 +60,7 @@ public class NewsTitleFragment extends Fragment implements AdapterView.OnItemCli
         News news = newsList.get(position);
         if (isTwoPane) {
             //如果是双页模式，则刷新NewsContentFragment中的内容
-            NewsContentFragment newsContentFragment = (NewsContentFragment)getFragmentManager().findFragmentById(R.id.news_content_fragment);
+            NewsContentFragment newsContentFragment = (NewsContentFragment) getFragmentManager().findFragmentById(R.id.news_content_fragment);
             newsContentFragment.refresh(news.getTitle(), news.getContent());
         } else {
             //如果是单页模式，则直接启动NewsContentActivity
@@ -85,8 +85,6 @@ public class NewsTitleFragment extends Fragment implements AdapterView.OnItemCli
                 "for the rapidly growing Chinese smartphone maker.");
         newsList.add(news2);
         return newsList;
-
-
 
 
     }

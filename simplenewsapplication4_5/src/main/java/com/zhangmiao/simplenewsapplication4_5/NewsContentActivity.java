@@ -27,7 +27,7 @@ public class NewsContentActivity extends Activity {
         setContentView(R.layout.news_content);
         String newsTitle = getIntent().getStringExtra("news_title");//获取传入的新闻标题
         String newsContent = getIntent().getStringExtra("news_content");//获取传入的新闻内容
-        NewsContentFragment newsContentFragment = (NewsContentFragment)getFragmentManager().findFragmentById(R.id.news_content_fragment);
-        newsContentFragment.refresh(newsTitle,newsContent);//刷新NewsContentFragment界面
+        NewsContentFragment newsContentFragment = (NewsContentFragment) getFragmentManager().findFragmentById(R.id.news_content_fragment);
+        newsContentFragment.refresh(newsTitle, newsContent);//刷新NewsContentFragment界面
     }
 }

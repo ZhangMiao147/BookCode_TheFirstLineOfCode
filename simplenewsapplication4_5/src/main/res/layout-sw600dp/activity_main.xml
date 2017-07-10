@@ -20,7 +20,7 @@
             android:id="@+id/news_content_fragment"
             android:name="com.zhangmiao.simplenewsapplication4_5.NewsContentFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
     </FrameLayout>
 

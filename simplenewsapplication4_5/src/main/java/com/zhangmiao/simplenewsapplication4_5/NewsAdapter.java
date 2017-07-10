@@ -16,7 +16,7 @@ import java.util.List;
  * Author: zhangmiao
  * Date: 2017/7/8
  */
-public class NewsAdapter extends ArrayAdapter<News>{
+public class NewsAdapter extends ArrayAdapter<News> {
 
     private int resourceId;
 
@@ -31,7 +31,7 @@ public class NewsAdapter extends ArrayAdapter<News>{
         News news = getItem(position);
         View view;
         if (convertView == null) {
-            view = LayoutInflater.from(getContext()).inflate(resourceId,null);
+            view = LayoutInflater.from(getContext()).inflate(resourceId, null);
         } else {
             view = convertView;
         }
