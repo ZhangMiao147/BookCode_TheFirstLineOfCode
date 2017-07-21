@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BookCode_TheFirstLineOfCode.iml" filepath="$PROJECT_DIR$/BookCode_TheFirstLineOfCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/broadcastpractice5_5/broadcastpractice5_5.iml" filepath="$PROJECT_DIR$/broadcastpractice5_5/broadcastpractice5_5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/contactstest7_2/contactstest7_2.iml" filepath="$PROJECT_DIR$/contactstest7_2/contactstest7_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mycontentprovider7_3/mycontentprovider7_3.iml" filepath="$PROJECT_DIR$/mycontentprovider7_3/mycontentprovider7_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simplenewsapplication4_5/simplenewsapplication4_5.iml" filepath="$PROJECT_DIR$/simplenewsapplication4_5/simplenewsapplication4_5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sqlitedemo6_4/sqlitedemo6_4.iml" filepath="$PROJECT_DIR$/sqlitedemo6_4/sqlitedemo6_4.iml" />
+    </modules>
+  </component>
+</project>

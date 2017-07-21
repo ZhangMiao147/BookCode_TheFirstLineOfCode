@@ -1,0 +1,1 @@
+include ':app', ':simplenewsapplication4_5', ':broadcastpractice5_5', ':sqlitedemo6_4', ':contactstest7_2', ':mycontentprovider7_3'
