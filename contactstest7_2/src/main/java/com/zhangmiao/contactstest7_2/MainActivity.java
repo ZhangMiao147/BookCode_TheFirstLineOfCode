@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
                 //获取联系人姓名
                 String displayName = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
                 String number = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                Log.d("contact",displayName+" "+number);
-                contactsList.add(displayName+"\n"+number);
+                Log.d("contact", displayName + " " + number);
+                contactsList.add(displayName + "\n" + number);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -49,8 +49,6 @@ public class MainActivity extends AppCompatActivity {
                 cursor.close();
             }
         }
-
-
 
 
     }

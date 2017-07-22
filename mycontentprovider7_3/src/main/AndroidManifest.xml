@@ -20,8 +20,7 @@
         <provider
             android:name="com.zhangmiao.mycontentprovider7_3.MyProvider"
             android:authorities="com.zhangmiao.mycontentprovider7_3.provider"
-            android:exported="true"
-            />
+            android:exported="true" />
 
     </application>
 

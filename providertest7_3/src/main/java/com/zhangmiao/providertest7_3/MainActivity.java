@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 values.put("pages", 1040);
                 values.put("price", 22.05);
                 Uri newUri = getContentResolver().insert(uri, values);
-                Log.d(TAG,"newuri = "+newUri);
+                Log.d(TAG, "newuri = " + newUri);
                 newId = newUri.getPathSegments().get(1);
             }
         });

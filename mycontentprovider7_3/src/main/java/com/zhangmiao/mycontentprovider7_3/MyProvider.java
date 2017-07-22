@@ -51,19 +51,19 @@ public class MyProvider extends ContentProvider {
         Cursor cursor = null;
         switch (uriMatcher.match(uri)) {
             case BOOK_DIR:
-                cursor = db.query("Book",projection,selection,selectionArgs,null,null,sortOrder);
+                cursor = db.query("Book", projection, selection, selectionArgs, null, null, sortOrder);
                 break;
             case BOOK_ITEM:
                 //Uri对象的getPathSegments()方法会将内容URI权限之后的部分以"/"符号进行分割，并把分割后的结果放入到一个字符串列表中，那么这个列表的第0个位置存放的就是路径，第一个位置存放的就是id了。
                 String bookId = uri.getPathSegments().get(1);
-                cursor = db.query("Book", projection, "id = ?", new String[]{ bookId}, null, null, sortOrder);
+                cursor = db.query("Book", projection, "id = ?", new String[]{bookId}, null, null, sortOrder);
                 break;
             case CATEGORY_DIR:
                 cursor = db.query("Category", projection, selection, selectionArgs, null, null, sortOrder);
                 break;
             case CATEGORY_ITEM:
                 String categoryId = uri.getPathSegments().get(1);
-                cursor = db.query("Category", projection, "id = ?", new String[]{ categoryId }, null, null, sortOrder);
+                cursor = db.query("Category", projection, "id = ?", new String[]{categoryId}, null, null, sortOrder);
                 break;
             default:
                 break;
@@ -93,7 +93,7 @@ public class MyProvider extends ContentProvider {
     @Override
     public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
         //添加数据
-        Log.d(TAG,"insert , uri =" +uri);
+        Log.d(TAG, "insert , uri =" + uri);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Uri uriReturn = null;
         switch (uriMatcher.match(uri)) {
@@ -110,7 +110,7 @@ public class MyProvider extends ContentProvider {
             default:
                 break;
         }
-        Log.d(TAG,"uriReturn = "+uriReturn);
+        Log.d(TAG, "uriReturn = " + uriReturn);
         return uriReturn;
     }
 
@@ -118,21 +118,21 @@ public class MyProvider extends ContentProvider {
     public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
         //删除数据
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        int deleteRows = 0 ;
+        int deleteRows = 0;
         switch (uriMatcher.match(uri)) {
             case BOOK_DIR:
                 deleteRows = db.delete("Book", selection, selectionArgs);
                 break;
             case BOOK_ITEM:
                 String bookId = uri.getPathSegments().get(1);
-                deleteRows = db.delete("Book", "id = ? ", new String[] { bookId });
+                deleteRows = db.delete("Book", "id = ? ", new String[]{bookId});
                 break;
             case CATEGORY_DIR:
                 deleteRows = db.delete("Category", selection, selectionArgs);
                 break;
             case CATEGORY_ITEM:
                 String categoryId = uri.getPathSegments().get(1);
-                deleteRows = db.delete("Category", "id = ?", new String[]{ categoryId });
+                deleteRows = db.delete("Category", "id = ?", new String[]{categoryId});
                 break;
             default:
                 break;
@@ -151,14 +151,14 @@ public class MyProvider extends ContentProvider {
                 break;
             case BOOK_ITEM:
                 String bookId = uri.getPathSegments().get(1);
-                updatedRows = db.update("Book", values, "id = ?", new String[]{ bookId });
+                updatedRows = db.update("Book", values, "id = ?", new String[]{bookId});
                 break;
             case CATEGORY_DIR:
                 updatedRows = db.update("Category", values, selection, selectionArgs);
                 break;
             case CATEGORY_ITEM:
                 String categoryId = uri.getPathSegments().get(1);
-                updatedRows = db.update("Category", values, "id = ?", new String[]{ categoryId });
+                updatedRows = db.update("Category", values, "id = ?", new String[]{categoryId});
                 break;
             default:
                 break;
