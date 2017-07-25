@@ -1,1 +1,1 @@
-include ':app', ':simplenewsapplication4_5', ':broadcastpractice5_5', ':sqlitedemo6_4', ':contactstest7_2', ':mycontentprovider7_3', ':providertest7_3', ':notificationtest8_1', ':smstest8_2'
+include ':app', ':simplenewsapplication4_5', ':broadcastpractice5_5', ':sqlitedemo6_4', ':contactstest7_2', ':mycontentprovider7_3', ':providertest7_3', ':notificationtest8_1', ':smstest8_2', ':choosepictest8_3'
