@@ -4,6 +4,7 @@ import android.media.MediaPlayer;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -24,6 +25,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         play = (Button) findViewById(R.id.play);
         pause = (Button) findViewById(R.id.pause);
         stop = (Button) findViewById(R.id.stop);
+        play.setOnClickListener(this);
+        pause.setOnClickListener(this);
+        stop.setOnClickListener(this);
         initMediaPlayer(); //初始化MediaPlayer
     }
 

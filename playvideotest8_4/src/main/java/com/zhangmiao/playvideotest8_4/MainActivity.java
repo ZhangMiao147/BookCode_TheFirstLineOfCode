@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initVideoPath() {
-        File file = new File(Environment.getExternalStorageDirectory(), "movio.3gp");
+        File file = new File(Environment.getExternalStorageDirectory(), "video.mp4");
         videoView.setVideoPath(file.getPath()); //指定视频文件的路径
     }
 
