@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BookCode_TheFirstLineOfCode.iml" filepath="$PROJECT_DIR$/BookCode_TheFirstLineOfCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidthreadtest9_2/androidthreadtest9_2.iml" filepath="$PROJECT_DIR$/androidthreadtest9_2/androidthreadtest9_2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/broadcastpractice5_5/broadcastpractice5_5.iml" filepath="$PROJECT_DIR$/broadcastpractice5_5/broadcastpractice5_5.iml" />
       <module fileurl="file://$PROJECT_DIR$/choosepictest8_3/choosepictest8_3.iml" filepath="$PROJECT_DIR$/choosepictest8_3/choosepictest8_3.iml" />
