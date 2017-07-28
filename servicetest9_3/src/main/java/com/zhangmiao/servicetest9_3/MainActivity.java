@@ -6,22 +6,26 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private static final String TAG = MainActivity.class.getSimpleName();
+
     private Button startService;
     private Button stopService;
     private Button bindService;
     private Button unbindService;
+    private Button startIntentService;
 
     private MyService.DownloadBinder downloadBinder;
 
     private ServiceConnection connection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-            downloadBinder = (MyService.DownloadBinder)iBinder;
+            downloadBinder = (MyService.DownloadBinder) iBinder;
             downloadBinder.startDownload();
             downloadBinder.getProgress();
         }
@@ -44,6 +48,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         unbindService = (Button) findViewById(R.id.unbind_service);
         bindService.setOnClickListener(this);
         unbindService.setOnClickListener(this);
+
+        startIntentService = (Button) findViewById(R.id.start_intent_service);
+        startIntentService.setOnClickListener(this);
     }
 
     @Override
@@ -62,7 +69,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bindService(bindIntent, connection, BIND_AUTO_CREATE);//绑定服务，BIND_AUTO_CREATE表示在活动和服务进行绑定后自动创建服务，service的oncreate会执行，onStartCommand不会执行
                 break;
             case R.id.unbind_service:
-                unbindService(connection);//解绑服务
+                if (connection != null) {
+                    unbindService(connection);//解绑服务
+                }
+                break;
+            case R.id.start_intent_service:
+                //打印主线程的id
+                Log.d(TAG, "Thread id is " + Thread.currentThread().getId());
+                Intent intentService = new Intent(this, MyIntentService.class);
+                startService(intentService);
                 break;
             default:
                 break;
