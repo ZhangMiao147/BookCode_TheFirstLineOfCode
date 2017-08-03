@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/accelerometersensortest12_3" />
             <option value="$PROJECT_DIR$/androidthreadtest9_2" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/baidumaptest11_4" />
