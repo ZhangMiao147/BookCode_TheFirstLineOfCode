@@ -70,12 +70,11 @@ public class MainActivity extends AppCompatActivity {
                 lastRotateDegree = rotateDegree;
             }
             Log.d(TAG, "value[0] is " + Math.toDegrees(values[0]));
-
         }
 
         @Override
         public void onAccuracyChanged(Sensor sensor, int i) {
-
+            Log.d(TAG, "onAccuracyChanged");
         }
     };
 }
