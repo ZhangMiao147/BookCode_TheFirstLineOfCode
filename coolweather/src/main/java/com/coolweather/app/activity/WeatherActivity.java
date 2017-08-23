@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,11 +21,16 @@ import com.coolweather.app.util.HttpCallbackListener;
 import com.coolweather.app.util.HttpUtil;
 import com.coolweather.app.util.Utility;
 
+import net.youmi.android.nm.bn.BannerManager;
+import net.youmi.android.nm.bn.BannerViewListener;
+
 /**
  * Author: zhangmiao
  * Date: 2017/8/23
  */
 public class WeatherActivity extends Activity implements View.OnClickListener{
+
+    private static final String TAG = WeatherActivity.class.getSimpleName();
 
     private LinearLayout weatherInfoLayout;
 
@@ -98,6 +105,29 @@ public class WeatherActivity extends Activity implements View.OnClickListener{
         }
         switchCity.setOnClickListener(this);
         refreshWeather.setOnClickListener(this);
+
+        //实例化广告条
+        //AdView adView = new AdView(this, AdSize.FIT_SCREEN);
+        final  View bannerView = BannerManager.getInstance(this).getBannerView(this, new BannerViewListener() {
+            @Override
+            public void onRequestSuccess() {
+                Log.d(TAG,"请求广告条成功");
+            }
+
+            @Override
+            public void onSwitchBanner() {
+                Log.d(TAG,"广告条切换");
+            }
+
+            @Override
+            public void onRequestFailed() {
+                Log.d(TAG,"请求广告条失败");
+            }
+        });
+        //获取要嵌入光改条的布局
+        LinearLayout adLayout = (LinearLayout)findViewById(R.id.adLayout);
+        //将广告条加入到布局中
+        adLayout.addView(bannerView);
     }
 
     @Override
