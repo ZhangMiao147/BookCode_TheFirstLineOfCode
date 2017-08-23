@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.coolweather.app.R;
+import com.coolweather.app.service.AutoUpdateService;
 import com.coolweather.app.util.HttpCallbackListener;
 import com.coolweather.app.util.HttpUtil;
 import com.coolweather.app.util.Utility;
@@ -89,6 +90,8 @@ public class WeatherActivity extends Activity implements View.OnClickListener{
             weatherInfoLayout.setVisibility(View.INVISIBLE);
             cityNameText.setVisibility(View.INVISIBLE);
             queryWeatherCode(countyCode);
+            Intent intent = new Intent(this, AutoUpdateService.class);
+            startService(intent);
         } else {
             //没有县级代号时就直接显示本地天气
             showWeather();
